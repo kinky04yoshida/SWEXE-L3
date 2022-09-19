@@ -8,8 +8,10 @@
     <td><%= tweet["message"] %></td>
     <td><%= tweet["tdate"].strftime('%Y年%m月%d日%H時%M分') %>
     (<%= (Time.now - tweet["tdate"]).div(60) %>分前)</td>
-    <td><%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
-    <%= link_to '表示', "/tweets/#{tweet.id}" %></td>
+    <td>
+      <%= link_to '表示', "/tweets/#{tweet.id}" %>
+      <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
+    </td>
 <% end %>
 </table>
 <p>
