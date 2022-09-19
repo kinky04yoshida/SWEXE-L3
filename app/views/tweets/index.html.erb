@@ -1,0 +1,16 @@
+<table border="1">
+  <tr>
+    <th>Tweet内容</th>
+    <th>日時</th>
+  </tr>
+<% @tweets.each do |tweet| %>
+  <tr>
+    <td><%= tweet["message"] %></td>
+    <td><%= tweet["tdate"].strftime('%Y年%m月%d日%H時%M分') %>
+    (<%= (Time.now - tweet["tdate"]).div(60) %>分前)</td>
+<% end %>
+</table>
+<p>
+  <%= link_to '新規Tweet', 'tweets/new' %>
+  <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
+</p>
