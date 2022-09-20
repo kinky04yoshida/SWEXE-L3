@@ -28,7 +28,7 @@ class TweetsController < ApplicationController
   
   def update
     @tweet = Tweet.find(params[:id])
-    tweet.update(message: params[:tweet][:message])
+    @tweet.update(message: params[:tweet][:message])
     if @tweet.save
       flash[:notice] = 'Tweet内容を更新しました。'
     end
