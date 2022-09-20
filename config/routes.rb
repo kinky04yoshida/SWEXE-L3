@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resource :tweets
   root 'tweets#index'
-
   post 'tweets', to: 'tweets#create'
   root 'tweets#create'
   get 'tweets/:id', to: 'tweets#show'
