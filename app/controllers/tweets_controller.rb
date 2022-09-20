@@ -11,6 +11,7 @@ class TweetsController < ApplicationController
   def create
     @tweet = Tweet.new(message: params[:tweet][:message], tdate: Time.current)
     if @tweet.save
+      flash[:notice] = 'Tweetしました。'
       redirect_to '/'
     else
       render 'new'

@@ -1,3 +1,12 @@
+<% if @tweet.errors.present? %>
+<h3>入力内容にエラーがあります。</h3>
+<ul>
+  <% @tweet.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
 <table border="1">
   <tr>
     <th>Tweet内容</th>
