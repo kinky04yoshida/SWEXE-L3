@@ -36,8 +36,8 @@ class TweetsController < ApplicationController
   end
   
   def destroy
-    tweet = Tweet.find(params[:id])
-    tweet.destroy
+    @tweet = Tweet.find(params[:id])
+    @tweet.destroy
     if @tweet.save
       flash[:notice] = 'Tweetを削除しました。'
     end
