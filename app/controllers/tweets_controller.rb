@@ -38,7 +38,7 @@ class TweetsController < ApplicationController
   def destroy
     @tweet = Tweet.find(params[:id])
     @tweet.destroy
-    if @tweet.save
+    if @tweet.destroy
       flash[:notice] = 'Tweetを削除しました。'
     end
     redirect_to '/'
